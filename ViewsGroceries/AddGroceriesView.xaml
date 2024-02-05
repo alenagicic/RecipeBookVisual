@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="RecipeBookVisual.ViewsGroceries.AddGroceriesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewmodel="clr-namespace:RecipeBookVisual.ViewModels"
+             d:DataContext="{d:DesignInstance viewmodel:GroceriesViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="LightSlateGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Background="CadetBlue" FontWeight="SemiBold" Foreground="WhiteSmoke" BorderThickness="1" BorderBrush="WhiteSmoke" Command="{Binding AddCommand}" Grid.Column="0" Width="55" Height="25">ADD</Button>
+        <Button Background="CadetBlue" FontWeight="SemiBold"  Foreground="WhiteSmoke" BorderThickness="1" BorderBrush="WhiteSmoke" Command="{Binding RemoveGroceryCommand}" Grid.Column="1" Width="55" Height="25">DELETE</Button>
+        <Button Background="CadetBlue" FontWeight="SemiBold"  Foreground="WhiteSmoke" BorderThickness="1" BorderBrush="WhiteSmoke" Command="{Binding SearchGroceryCommand}" Grid.Column="2" Width="55" Height="25">GET</Button>
+        <Button Background="CadetBlue" FontWeight="SemiBold"  Foreground="WhiteSmoke" BorderThickness="1" BorderBrush="WhiteSmoke" Command="{Binding UpdateGroceryCommand}" Grid.Column="3" Width="55" Height="25">UPDATE</Button>
+        <Button Background="CadetBlue" FontWeight="SemiBold"  Foreground="WhiteSmoke" BorderThickness="1" BorderBrush="WhiteSmoke" Command="{Binding ClearFieldsCommand}" HorizontalAlignment="Center" Grid.Column="4" Width="80" Height="25">CLEARFIELDS</Button>
+
+
+
+
+        <ContentPresenter Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="5" Grid.Column="0">
+
+            <ContentPresenter.Content>
+                <Border BorderThickness="5" BorderBrush="CadetBlue" Background="WhiteSmoke">
+                    <StackPanel Height="200">
+                    <StackPanel Margin="2,2,2,2" Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock  Margin="10, 5, 0, 0">ProduktNamn: </TextBlock>
+                            <TextBox x:Name="a" Text="{Binding ProductsMainGroceries.NameOfProduct, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="50, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 0, 0">Pris:</TextBlock>
+                            <TextBox Text="{Binding ProductsMainGroceries.Price, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="105, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 0, 0">Användningsområde:</TextBlock>
+                            <TextBox Text="{Binding ProductUsageGroceries.ProductUsage1, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="14, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 0, 0">FinnsiFöljandeButiker:</TextBlock>
+                            <TextBox Text="{Binding StoreGroceries.FindInStoreName, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="11.5, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 0, 0">Produktbeskrivning:</TextBlock>
+                            <TextBox Text="{Binding ProductInfoGroceries.ProductDescription, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="21.3, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 0, 0">Artikelnummer:</TextBlock>
+                            <TextBox Text="{Binding ProductArticleNrPriceGroceries.ProductArticleNumber, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="45, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="2, 2,2,2"  Height="25" Background="WhiteSmoke" Orientation="Horizontal">
+                        <TextBlock Margin="10, 5, 25, 0">Inköpspris:</TextBlock>
+                            <TextBox Text="{Binding ProductArticleNrPriceGroceries.Price, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" VerticalContentAlignment="Center" Margin="45, 0, 0, 0" Width="350"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            </ContentPresenter.Content>
+
+        </ContentPresenter>
+
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

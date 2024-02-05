@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="RecipeBookVisual.ViewsGroceries.CombinationWarningGroceries"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipeBookVisual.ViewsGroceries"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="LightSlateGray">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <HeaderedContentControl VerticalAlignment="Bottom" Foreground="WhiteSmoke" Grid.Row="0" HorizontalAlignment="Center" FontSize="18">Något av följande fel:</HeaderedContentControl>
+        <HeaderedContentControl VerticalAlignment="Bottom" Foreground="WhiteSmoke" Grid.Row="1" HorizontalAlignment="Center" FontSize="18">- Samtliga Fält Måste Vara Ifyllda</HeaderedContentControl>
+        <HeaderedContentControl VerticalAlignment="Center" Foreground="WhiteSmoke" Grid.Row="2" HorizontalAlignment="Center" FontSize="18">- Produkten Finns Redan</HeaderedContentControl>
+        <HeaderedContentControl VerticalAlignment="Top" Foreground="WhiteSmoke" Grid.Row="3" HorizontalAlignment="Center" FontSize="18">- Produkten Finns Inte</HeaderedContentControl>
+
+    </Grid>
+</UserControl>

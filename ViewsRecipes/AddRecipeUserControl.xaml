@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="RecipeBookVisual.ViewsRecipes.AddRecipeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:RecipeBookVisual.ViewModels"
+             d:DataContext="{d:DesignInstance viewmodel:RecipeViewModel}"
+             mc:Ignorable="d" 
+             
+             d:DesignHeight="450" d:DesignWidth="400">
+
+
+    <Grid Background="LightSlateGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="WhiteSmoke" BorderThickness="1">
+
+
+            <ScrollViewer Background="SlateGray">
+
+
+
+                <StackPanel Name="AddUserColumn" Grid.Column="0" Margin="20">
+
+
+                    <DataGridRowHeader Padding="10" FontSize="18" HorizontalAlignment="Center" Foreground="WhiteSmoke" Background="SlateGray">Lägg Till Recept</DataGridRowHeader>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">Titel</Label>
+                    <TextBox x:Name="a" Text="{Binding MainRecipe.TitleRecipe, Mode=TwoWay}" FontSize="12"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">Ingredienser</Label>
+                    <TextBox x:Name="b" FontSize="12" Text="{Binding MainRecipe.Ingredient, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">Tillgångvägasätt</Label>
+                    <TextBox x:Name="c" FontSize="12" Text="{Binding MainRecipe.Descriptions, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">TillagningsTid</Label>
+                    <TextBox x:Name="d" FontSize="12" Text="{Binding MainRecipe.CookingTimes, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">Anekdot</Label>
+                    <TextBox x:Name="e" FontSize="12" Text="{Binding FunFactRecipe.FoodForTought, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">AlternativTitel</Label>
+                    <TextBox x:Name="f" FontSize="12" Text="{Binding AlternativeIngredient.Title, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">AlternativaIngredienser</Label>
+                    <TextBox x:Name="g" FontSize="12" Text="{Binding AlternativeIngredient.Ingredients, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">AlternativBeskrivning</Label>
+                    <TextBox x:Name="h" FontSize="12" Text="{Binding AlternativeIngredient.Description, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">AlternativTillagningstid</Label>
+                    <TextBox x:Name="i" FontSize="12" Text="{Binding AlternativeIngredient.CookingTime, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">DrinkFörslag</Label>
+                    <TextBox x:Name="j" FontSize="12" Text="{Binding PairingsRecipe.SuggestDrinks, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">DessertFörslag</Label>
+                    <TextBox x:Name="k" FontSize="12" Text="{Binding PairingsRecipe.SuggestDesserts, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">FilmFörslag</Label>
+                    <TextBox x:Name="l" FontSize="12" Text="{Binding PairingsRecipe.SuggestMovie, Mode=TwoWay}"></TextBox>
+                    <Label FontSize="12" Background="SlateGray" Foreground="WhiteSmoke">EnHistoria</Label>
+                    <TextBox x:Name="m" FontSize="12" Text="{Binding RecipeStory.Stories, Mode=TwoWay}"></TextBox>
+
+
+
+
+                    <Button Width="150" Height="25" BorderBrush="WhiteSmoke" Foreground="WhiteSmoke" Background="SteelBlue" Name="button" Command="{Binding AddRecipeCommand}" Margin="10">Skicka Formulär</Button>
+
+
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Border>
+
+    </Grid>
+</UserControl>

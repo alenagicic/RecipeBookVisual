@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="RecipeBookVisual.ViewsGroceries.ProductSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipeBookVisual.ViewsGroceries"
+             
+             xmlns:viewmodel="clr-namespace:RecipeBookVisual.ViewModels"
+             d:DataContext="{d:DesignInstance viewmodel:GroceriesViewModel}"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="LightSlateGray">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <HeaderedContentControl Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" Foreground="WhiteSmoke" FontWeight="DemiBold">Mata in Titel på produkt</HeaderedContentControl>
+        <TextBox VerticalContentAlignment="Center" Text="{Binding TitleSearch}" Grid.Row="1" Height="25" Width="200"></TextBox>
+        <Button Command="{Binding GetReadCommand}" Grid.Row="1" Height="25" Width="100" VerticalAlignment="Bottom">Search</Button>
+    </Grid>
+</UserControl>
